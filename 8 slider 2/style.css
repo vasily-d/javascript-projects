@@ -1,0 +1,7 @@
+*{padding: 0; margin: 0;}
+
+.wrapper {width: 400px; margin: 0 auto; margin-top: 150px; outline: 1px solid red;}
+.wrapper img{width: 400px; height: 300px;}
+.wrapper div #prev{float: left;}
+.wrapper div #next{float: right;}
+

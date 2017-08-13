@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>to do task</title>
+	<style>		
+		#myDiv{
+			width:100%;
+			padding: 50px 0;
+			text-align: center;
+			background-color: green;
+			margin-top: 20px;
+		}
+
+		.alert{
+			padding: 20px;
+			background-color: #f44336;
+			color: white;
+			opacity: 1;
+			transition: opacity .6s;
+			margin-bottom: 15px;
+		}
+		.alert.success{
+			background-color: #4caf50;
+		}
+		.alert.info{
+			background-color: #2196f3;
+		}
+		.alert.warning{
+			background-color: #ff9800;
+		}
+		.closebtn{
+			margin-left: 15px;
+			color: white;
+			font-weight: bold;
+			float: right;
+			font-size:22px;
+			line-height: 20px;
+			cursor: pointer;
+			transition: 3s;
+		}
+		.closebtn:hover{
+			color:black;
+		}
+
+	</style>
+</head>
+<body>
+	<button onclick="myFunction()">Click</button>
+	<div id="myDiv">
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, esse maxime ea pariatur ad tenetur iusto doloribus, saepe adipisci consequuntur, eaque reprehenderit impedit? Provident corporis nam ipsam vitae distinctio tempore.
+	</div>
+
+
+	<div class="alert">
+		<span class="closebtn">&times;</span>
+		<strong>Danger</strong>
+	</div>
+
+	<div class="alert success">
+		<span class="closebtn">&times;</span>
+		<strong>Success!</strong>
+	</div>
+
+	<div class="alert info">
+		<span class="closebtn">&times;</span>
+		<strong>Info</strong>
+	</div>
+
+	<div class="alert warning">
+		<span class="closebtn">&times;</span>
+		<strong>Warning</strong>
+	</div>
+
+	<script defer async src="script.js"></script>
+</body>
+</html>

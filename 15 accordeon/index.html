@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>checkbox</title>
+	<style>		
+		button.accordion{
+			background-color: #eee;
+			color: #444;
+			cursor: pointer;
+			padding: 18px;
+			width: 100%;
+			text-align: left;
+			border: none;
+			outline: none;
+			transition: .4s;
+		}
+		button.accordion:active, button.accordion:hover{
+			background-color: #ddd;
+		}
+		div.panel{
+			padding: 0 18px;
+			background-color: white;
+			display: none;
+		}
+		
+		div.panel.show{display: block;}
+		
+	</style>
+</head>
+<body>
+
+	<button class="accordion">Section 1</button>
+	<div class="panel">
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, accusamus, omnis, tempore beatae illum natus eligendi quia cumque maxime eius repellendus earum harum repellat obcaecati quas adipisci excepturi fugit at!</p>
+	</div>
+	<button class="accordion">Section 2</button>
+	<div class="panel">
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, accusamus, omnis, tempore beatae illum natus eligendi quia cumque maxime eius repellendus earum harum repellat obcaecati quas adipisci excepturi fugit at!</p>
+	</div>
+	<button class="accordion">Section 3</button>
+	<div class="panel">
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, accusamus, omnis, tempore beatae illum natus eligendi quia cumque maxime eius repellendus earum harum repellat obcaecati quas adipisci excepturi fugit at!</p>
+	</div>
+	
+	<script src="script.js"></script>
+</body>
+</html>

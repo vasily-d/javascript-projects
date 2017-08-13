@@ -1,0 +1,16 @@
+*{padding: 0; margin: 0;}
+body div{outline: 1px solid black;}
+.clearFix{content: ""; display: table; clear:both;}
+
+.wrapper{width: 800px; margin: 10px auto;}
+
+.wrapper .main{height: 800px;}
+.wrapper .main div{
+	width: 198px; height: 198px; float: left;
+	margin: 1px;
+	background-image: url("img/8.jpg");
+	background-size: cover;
+}
+.wrapper .footer{height: 100px;}
+
+#start{width: 800px; height: 30px;}

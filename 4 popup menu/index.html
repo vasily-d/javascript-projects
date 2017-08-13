@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>checkbox</title>
+	<style>
+		#nav{outline: 1px solid red;}
+	
+		.menu-item {
+			border: 2px solid red;
+			display: inline-block;
+			position: relative;
+			cursor: pointer;
+		}
+		.menu-item .submenu {
+			height: 40px;
+			width: 120px;
+			background: green;
+			position: absolute;
+			cursor: pointer;
+			border: 2px solid red;
+		}
+		
+		//.submenu{display: none;}
+		//.menu-item:hover .submenu{display: block;}
+		
+	</style>
+</head>
+<body>
+	<div id = "nav">
+		<div class="menu-item">
+		Menu 1
+			<div class="submenu">
+				Submenu
+			</div>
+		</div>
+		<div class="menu-item">
+		Menu 2
+			<div class="submenu">
+				Submenu
+			</div>
+		</div>
+		<div class="menu-item">
+		Menu 3
+			<div class="submenu">
+				Submenu
+			</div>
+		</div>
+	</nav>
+	
+	<script defer src = "javascript.js"></script>
+</body>
+</html>
