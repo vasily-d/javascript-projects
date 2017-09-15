@@ -29,9 +29,9 @@
 
 	<script>
 		// простая валидация формы на пустые значения
-		window.onload = function(){
-			var send = document.querySelector('form button');
-			send.addEventListener('click', sendBtn);
+		window.onload = function() {
+			var submit = document.querySelector('form');
+			submit.addEventListener('submit', sendBtn);
 			var inputs = document.querySelectorAll('form input');
 
 			function sendBtn(e) {
@@ -47,6 +47,9 @@
 							inputs[i].classList.add('warning');
 						}
 					} 
+					else {
+						inputs[i].classList.remove('warning');
+					}
 				}
 
 				// нужно ли генерировать событие send
