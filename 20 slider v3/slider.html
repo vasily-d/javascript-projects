@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<style>
+		body{padding: 0; margin: 0;}
+		*{outline: 1px solid #000;}
+
+		.slider{
+			margin: 0 auto;
+			width: 800px;
+		}
+		.slider-images{
+			background: url("img/1.jpg") no-repeat 0 0;
+			width: 800px;
+			height: 600px;
+		}
+		.slider-buttons{overflow: hidden;}
+		.slider-prev{float: left; cursor: pointer; border: none; width: 150px; height: 30px;}
+		.slider-next{float: right; cursor: pointer; border: none; width: 150px; height: 30px;}
+	</style>
+</head>
+
+<body>
+	<div class="slider">
+		<div class="slider-images"></div>
+		<div class="slider-buttons">
+			<button class="slider-prev" type="button">prev</button>
+			<button class="slider-next" type="button">next</button>
+		</div>
+	</div>
+
+	<script>
+		window.onload = function(){
+			var prev = document.querySelector('.slider-buttons .slider-prev');
+			var next = document.querySelector('.slider-buttons .slider-next');
+			var img = document.querySelector('.slider-images');
+			var countImages = 2;
+			var i = 1;
+
+			prev.addEventListener('click', function(){
+				if(i != 1) --i
+				else i = countImages;
+			
+				img.style.background = 'url("img/'+i+'.jpg") no-repeat 0 0';
+			});
+
+			next.addEventListener('click', function(){
+				if(i != countImages) ++i
+				else i = 1;
+
+				img.style.background = 'url("img/'+i+'.jpg") no-repeat 0 0';
+			});
+		}
+	</script>
+</body>
+</html>

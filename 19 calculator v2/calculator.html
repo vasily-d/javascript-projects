@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<style>
+		form button{
+			width: 100px;
+		}
+	</style>
+</head>
+
+<body>
+	<form action="/" method="get">
+		<input type="text" name="num1" value="0">
+		<select name="operation">
+			<option value="plus" name="plus">+</option>
+			<option value="minus" name="minus">-</option>
+			<option value="mul" name="mul">*</option>
+			<option value="div" name="div">/</option>
+		</select>
+		<input type="text" name="num2" value="0">
+		<button type="button">=</button>
+		<span class="result">0</span>
+	</form>
+
+	<script>
+		window.onload = function(e){
+			var buttonResult = document.querySelector('button[type="button"]');
+			var spanResult = document.querySelector('span.result');
+			var numbers = document.querySelectorAll('form input');
+			var select = document.querySelector('select');
+
+			buttonResult.addEventListener('click', function(){
+				var num1 = parseInt(document.querySelector('input[name="num1"]').value);
+				var num2 = parseInt(document.querySelector('input[name="num2"]').value);
+				var result = 0;
+				var typeOperation = document.querySelector('form select');
+				typeOperation = typeOperation.options[typeOperation.selectedIndex].value;
+
+				switch(typeOperation){
+					case 'plus':
+						result = num1+num2;
+						break;
+					case 'minus':
+						result = num1-num2;
+						break;
+					case 'mul':
+						result = num1*num2;
+						break;
+					case 'div':
+						(num2 != 0) ? result = num1/num2 : result = 'error: divide to zero!';
+						break;
+					default:
+						result = 'error: select operation';
+						break;
+				}
+
+				spanResult.innerHTML = result;
+				this.setAttribute('disabled','disabled');
+				//this.disabled = true;
+
+				numbers[0].focus();
+			});
+
+			for(var i = 0; i<numbers.length; i++){
+				numbers[i].addEventListener('input', function(){
+					buttonResult.removeAttribute('disabled');
+				});
+			}
+
+			select.addEventListener('change', function(){
+				buttonResult.removeAttribute('disabled');
+			});
+		}
+	</script>
+</body>
+</html>

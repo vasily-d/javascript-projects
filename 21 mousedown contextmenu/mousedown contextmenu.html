@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+
+<body>
+	<div class="images">
+		<img src="1.jpg" alt="img1" width="400">
+		<img src="2.png" alt="img2" width="400">
+	</div>
+
+	<script>
+		window.onload = function(e) {
+			var links = document.querySelectorAll('a[target="_blank"]');
+			
+			// links
+			for(var i = 0; i < links.length; i++) {
+				links[i].addEventListener('click', foo);
+				// links[i].onclick = foo;
+			}
+
+			function foo(e) {
+				if(!confirm("перейти ?")){
+					e.preventDefault();	// подходит всем
+					// return false; // для onclick
+				}
+			}
+
+			// images
+			var images = document.querySelectorAll('.images img');
+
+			for(var i = 0; i < images.length; i++) {
+				images[i].addEventListener('mousedown', stopMove);
+				images[i].addEventListener('contextmenu', stopMove);
+
+				// images[i].onclick = function(e) {
+				// 	alert(this.getAttribute('src'));
+				// };
+			}
+
+			function stopMove(e) {
+				// alert(this.getAttribute('src'));
+				e.preventDefault();
+			}
+		};
+	</script>
+</body>
+</html>

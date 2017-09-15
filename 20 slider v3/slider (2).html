@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			/*outline: 1px solid #000;*/
+		}
+
+		.wrapper{
+			margin: 0 auto;
+			width: 800px;
+		}
+
+		img{
+			max-width: 100%;
+			height: auto;
+			display: none;
+		}
+
+		.show{display: block;}
+	</style>
+</head>
+
+<body>
+	<div class="wrapper">
+		<div class="images">
+			<img class="show" src="img/1.jpg" alt="img1">
+			<img src="img/2.jpg" alt="img2">
+		</div>
+
+		<div class="btns">
+			<input class="prev" type="button" value="prev"></input>
+			<input class="next" type="button" value="next"></input>
+		</div>
+	</div>
+	
+
+	<script>
+		window.onload = function(e) {
+			var prevBtn = document.querySelector('.prev');
+			var nextBtn = document.querySelector('.next');
+			var imgs = document.querySelectorAll('.images img');
+
+			// current index img on screen
+			var current = -1;
+			for(var i = 0; i < imgs.length; i++) {
+				if(imgs[i].classList.contains('show')) {
+					current = i;
+				}
+			}
+
+			prevBtn.addEventListener('click', prevImg);
+			nextBtn.addEventListener('click', nextImg);
+
+			function nextImg() {
+				if(current != -1) {
+					if(current < imgs.length-1) {
+						imgs[current].classList.remove('show');
+						++current;
+						imgs[current].classList.add('show');
+					}
+					else {
+						imgs[current].classList.remove('show');
+						current = 0;
+						imgs[current].classList.add('show');
+					}
+				}
+				else {
+					alert('error: no images found');
+				}
+			}
+
+			function prevImg() {
+				if(current != -1) {
+					if(current > 0) {
+						imgs[current].classList.remove('show');
+						--current;
+						imgs[current].classList.add('show');
+					}
+					else {
+						imgs[current].classList.remove('show');
+						current = imgs.length-1;
+						imgs[current].classList.add('show');
+					}
+				}
+				else {
+					alert('error: no images found');
+				}
+			}
+		};
+	</script>
+</body>
+</html>
