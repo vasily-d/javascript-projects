@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<style>
+		.warning{
+			border: 2px solid #f00;
+		}
+	</style>
+</head>
+
+<body>
+
+	<form action="/" method="post">
+		<label>
+			Name:<br>
+			<input type="text" name="name" placeholder="your name"><br>
+		</label>
+		<label>
+			Email:<br>
+			<input type="email" name="email" placeholder="email"><br>
+		</label>
+		
+		<button type="submit">Send</button>
+	</form>
+
+
+	<script>
+		// простая валидация формы на пустые значения
+		window.onload = function(){
+			var send = document.querySelector('form button');
+			send.addEventListener('click', sendBtn);
+			var inputs = document.querySelectorAll('form input');
+
+			function sendBtn(e) {
+				// проверка что name и email не пустые
+				var flagWarning = false;
+
+				for(var i = 0; i < inputs.length; i++) {
+					if(inputs[i].value === '') {
+						flagWarning = true;
+
+						// проверка что нет класса warning
+						if(!inputs[i].classList.contains('warning')) {
+							inputs[i].classList.add('warning');
+						}
+					} 
+				}
+
+				// нужно ли генерировать событие send
+				if(flagWarning) {
+					e.preventDefault();
+				}
+			}
+		};
+	</script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			/*outline: 1px solid #000;*/
+		}
+
+		.wrapper{
+			margin: 0 auto;
+			width: 800px;
+		}
+
+		img{
+			max-width: 100%;
+			height: auto;
+			display: none;
+		}
+
+		.show{display: block;}
+	</style>
+</head>
+
+<body>
+	<div class="wrapper">
+		<div class="slider1">
+			<div class="images">
+				<img class="show" src="img/1.jpg" alt="img1">
+				<img src="img/2.jpg" alt="img2">
+			</div>
+
+			<div class="btns">
+				<input class="prev" type="button" value="prev"></input>
+				<input class="next" type="button" value="next"></input>
+			</div>
+		</div>
+
+		<div class="slider2">
+			<div class="images">
+				<img class="show" src="img/1.jpg" alt="img1">
+				<img src="img/2.jpg" alt="img2">
+			</div>
+
+			<div class="btns">
+				<input class="prev" type="button" value="prev"></input>
+				<input class="next" type="button" value="next"></input>
+			</div>
+		</div>
+		
+	</div>
+	
+
+	<script>
+		window.onload = function(e) {
+
+			// class Slider
+			function Slider(classPrev, classNext, classImgs, classShow, autoplay) {
+				this.prevBtn = document.querySelector(classPrev);
+				this.nextBtn = document.querySelector(classNext);
+				this.imgs = document.querySelectorAll(classImgs);
+				this.show = classShow || 'show';
+				this.autoplay = autoplay || false;
+				var self = this;
+				// current index img on screen
+				var current = -1;
+
+				for(var i = 0; i < this.imgs.length; i++) {
+					if(this.imgs[i].classList.contains(this.show)) {
+						current = i;
+					}
+				}
+
+				this.nextImg = function(e) {
+					if(current != -1) {
+						if(current < self.imgs.length-1) {
+							self.imgs[current].classList.remove(self.show);
+							++current;
+							self.imgs[current].classList.add(self.show);
+						}
+						else {
+							self.imgs[current].classList.remove(self.show);
+							current = 0;
+							self.imgs[current].classList.add(self.show);
+						}
+					}
+					else {
+						alert('error: no images found - next');
+					}
+				};
+
+				this.prevImg = function(e) {
+					if(current != -1) {
+						if(current > 0) {
+							self.imgs[current].classList.remove(self.show);
+							--current;
+							self.imgs[current].classList.add(self.show);
+						}
+						else {
+							self.imgs[current].classList.remove(self.show);
+							current = self.imgs.length-1;
+							self.imgs[current].classList.add(self.show);
+						}
+					}
+					else {
+						alert('error: no images found - prev');
+					}
+				};
+
+				this.prevBtn.addEventListener('click', this.prevImg);
+				this.nextBtn.addEventListener('click', this.nextImg);
+
+				if(autoplay) {
+					setInterval(this.nextImg, 2000);
+				}
+			}
+
+			var slider1 = new Slider('.slider1 .prev', '.slider1 .next', '.slider1 .images img', 'show', false);
+			
+			// setInterval(function(){
+			// 	slider1.nextImg();
+			// }, 1000);
+			
+			//setInterval(slider1.nextImg, 1000);
+
+			var slider2 = new Slider('.slider2 .prev', '.slider2 .next', '.slider2 .images img', 'show', true);
+		};
+	</script>
+</body>
+</html>

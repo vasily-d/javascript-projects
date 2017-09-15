@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<style>
+	
+	</style>
+</head>
+
+<body>
+	<script>
+		window.onload = function(){
+
+			// чертеж
+			function Clock(h,m,s,price) {
+				this.h = h|0;
+				this.m = m|0;
+				this.s = s|0;
+				this.price = price|0;
+
+				this.showTime = function() {
+					console.log('time: '+this.h+' '+this.m+' '+this.s);
+				};
+
+				this.showPrice = function() {
+					console.log('price: '+this.price);
+				};
+			};
+
+			// object
+			var clock1 = new Clock();
+			clock1.showTime();
+			clock1.showPrice();
+
+			var clock2 = new Clock(10,21,37,43555);
+			clock2.showTime();
+			clock2.showPrice();
+		};
+	</script>
+</body>
+</html>
