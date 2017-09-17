@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>my jquery</title>
+
+	<style>
+		*{outline: 1px solid #000; padding: 0; margin: 0;}
+		div{width: 400px;}
+		.color{background: gold;}
+	</style>
+</head>
+
+<body>
+	<div class="one">
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, magni? Velit minus, vero suscipit beatae facilis doloribus aliquam sed expedita accusantium itaque assumenda laborum facere aliquid hic! Reiciendis, similique, et?
+	</div>
+	<div class="two">
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, magni? Velit minus, vero suscipit beatae facilis doloribus aliquam sed expedita accusantium itaque assumenda laborum facere aliquid hic! Reiciendis, similique, et?
+	</div>
+	<div class="three">
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, magni? Velit minus, vero suscipit beatae facilis doloribus aliquam sed expedita accusantium itaque assumenda laborum facere aliquid hic! Reiciendis, similique, et?
+	</div>
+
+	<script>
+		// что дает jquery ?
+		// for
+		// цыпочки
+		// $
+		// универсальность команд, например html() с и без аргументом
+
+		function OurjQuery(elements) {
+			this.elements = elements;
+
+			// события на все элементы или элементу
+			this.on = function(nameEvent, f) {
+				for(var i = 0; i < this.elements.length; i++){
+					this.elements[i].addEventListener(nameEvent, f);
+				}
+
+				return this;
+			};
+
+			// добавить классы элементам(-у)
+			this.addClass = function(nameClass) {
+				for(var i = 0; i < this.elements.length; i++){
+					this.elements[i].classList.add(nameClass);
+				}
+
+				return this;
+			};
+
+			// удалить классы элементам(-у)
+			this.removeClass = function(nameClass) {
+				for(var i = 0; i < this.elements.length; i++){
+					this.elements[i].classList.remove(nameClass);
+				}
+
+				return this;
+			};
+
+			// добавить классы элементам(-у)
+			this.html = function(htmlContent) {
+				// возвращает элемент
+				if(typeof(htmlContent) === 'undefined') {
+					return this.elements[0].innerHTML;
+				}
+
+				for(var i = 0; i < this.elements.length; i++){
+					this.elements[i].innerHTML = htmlContent;
+				}
+
+				return this;
+			};
+
+
+
+			// добавить классы элементам(-у)
+			this.css = function(cssElement, cssAttribute) {
+
+				// возвращает элемент
+				if(typeof(cssAttribute) === 'undefined') {
+					// return this.elements[0].getAttribute(cssElement);
+					// return this.elements[0].getComputedStyle(cssElement, null);
+					return this.elements[0].style[cssElement];
+				}
+
+				for(var i = 0; i < this.elements.length; i++) {
+					// this.elements[i].setAttribute(cssElement, cssAttribute);
+					// console.log(cssElement+':'+cssAttribute);
+					
+					this.elements[i].style[cssElement] = cssAttribute;
+				}
+
+				return this;
+			};
+		}
+
+		function $(selector) {
+			var elements;
+
+			// строка ли это или html элемент
+			if(selector instanceof HTMLElement) {
+				elements = [selector];
+			}
+			else {
+				elements = document.querySelectorAll(selector);
+			}
+			
+			return new OurjQuery(elements);
+		}
+
+		// примеры:
+		$('.one').on('click', function() {
+			console.log('one');
+		});
+
+		$('.one').addClass('color');
+
+		$('.two')
+			.on('click', function() {
+				alert('click');
+			})
+			.on('mousemove', function() {
+				console.log('mouse move');
+			})
+			.html('test');
+
+		console.log('html: ' + $('.three').html());
+
+		$('.three').css('backgroundColor', '#0f0');
+		console.log('css: ' + $('.three').css('backgroundColor'));
+
+		// console.log($('.two').fade(300));
+
+	</script>
+</body>
+</html>

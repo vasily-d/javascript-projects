@@ -121,11 +121,12 @@
 
 			var slider1 = new Slider('.slider1 .prev', '.slider1 .next', '.slider1 .images img', 'show', false);
 			
+			// два варианта:
 			// setInterval(function(){
 			// 	slider1.nextImg();
 			// }, 1000);
 			
-			//setInterval(slider1.nextImg, 1000);
+			//setInterval(slider1.nextImg, 1000);	// если есть self
 
 			var slider2 = new Slider('.slider2 .prev', '.slider2 .next', '.slider2 .images img', 'show', true);
 		};

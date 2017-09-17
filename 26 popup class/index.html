@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>popup</title>
+	<style>
+		.modal-popup {
+		  background: #fff;
+		  box-shadow: 0 30px 50px rgba(0, 0, 0, 0.7);
+		  color: #000;
+		  width: 300px;
+		  margin-left: -230px;
+		  display: none;
+		  padding: 50px 80px;
+		  position: absolute;
+		  top: 120px;
+		  left: 50%;
+		  z-index: 20;
+		}
+		.modal-popup h2 {
+		  margin: 0;
+		  margin-bottom: 28px;
+		  color: #000;
+		  font-weight: 700;
+		  font-size: 30px;
+		  text-transform: uppercase;
+		}
+		.modal-popup p {
+		  margin: 0;
+		  margin-bottom: 16px;
+		  color: #000;
+		  font-weight: 700;
+		  font-size: 14;
+		  text-transform: uppercase;
+		}
+		.modal-popup .login-form input[name="login"],
+		.modal-popup .login-form input[name="password"] {
+		  background: #f9f6f3;
+		  border: 2px solid #000101;
+		  color: #000;
+		  font-size: 14px;
+		  font-weight: 700;
+		  text-transform: uppercase;
+		  padding: 13px 40px 13px 13px;
+		  box-sizing: border-box;
+		  width: 300px;
+		  margin-bottom: 10px;
+		}
+		.modal-popup .login-form input[name="login"]:placeholder,
+		.modal-popup .login-form input[name="password"]:placeholder {
+		  background: #f9f6f3;
+		  color: #888;
+		  font-size: 14px;
+		  font-weight: 700;
+		  text-transform: uppercase;
+		}
+		.modal-popup .login-form input[name="login"] {
+		  background: url("img/popup-login.png") no-repeat 270px 14px;
+		}
+		.modal-popup .login-form input[name="password"] {
+		  background: url("img/popup-password.png") no-repeat 270px 14px;
+		  margin-bottom: 15px;
+		}
+		.modal-popup .login-form .login-checkbox {
+		  float: left;
+		  color: #000;
+		  font-size: 14px;
+		  font-weight: bold;
+		}
+		.modal-popup .login-form .login-checkbox .box {
+		  margin-bottom: 17px;
+		}
+		.modal-popup .login-form .restore {
+		  float: right;
+		  color: #000;
+		  font-size: 14px;
+		  font-weight: bold;
+		  text-decoration: underline;
+		}
+		.modal-popup .login-form .restore:hover {
+		  text-decoration: none;
+		}
+		.modal-popup .login-form button {
+		  background: #000;
+		  border: none;
+		  cursor: pointer;
+		  padding: 14px 0;
+		  width: 100%;
+		  color: #fff;
+		  text-transform: uppercase;
+		  font-weight: 700;
+		  font-size: 14px;
+		}
+		.modal-popup .login-form button:hover {
+		  background: #333;
+		}
+		.modal-popup .close {
+		  position: absolute;
+		  top: 0;
+		  right: -34px;
+		  width: 21px;
+		  height: 21px;
+		  background: url("img/x.png") no-repeat;
+		  border: 0;
+		  cursor: pointer;
+		}
+		.modal-popup .close:hover {
+		  opacity: 0.4;
+		  background: url("img/x.png") no-repeat;
+		}
+
+		.modal-overlay {
+		  position: fixed;
+		  top: 0;
+		  left: 0;
+		  z-index: 10;
+		  width: 100%;
+		  height: 100%;
+		  background: rgba(0, 0, 0, 0.5);
+		  display: none;
+		  cursor: pointer;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="some-text">
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam blanditiis sit accusantium doloribus earum illum fugiat consequuntur recusandae incidunt neque. Quod adipisci quis ducimus pariatur mollitia quae doloribus recusandae iste, cupiditate qui, autem facilis ipsum. Error enim veniam eaque natus iste nam reprehenderit. Quisquam esse repudiandae exercitationem suscipit veniam adipisci deleniti non maxime at, distinctio, officia consequatur animi voluptatem nemo reiciendis ullam ex? Veritatis rerum ullam quod magnam, odio dicta, dolore non iure temporibus illum ducimus. Esse commodi omnis quisquam incidunt accusamus quos aut perferendis, dolorum obcaecati consequatur qui harum deserunt pariatur, assumenda iusto debitis vitae deleniti ipsum voluptatibus. Fuga vitae maiores, pariatur repudiandae qui, vero nihil consequatur delectus, hic nulla, repellat voluptate. Consectetur voluptatum dolorum similique sint provident omnis, optio deserunt velit cupiditate. Nesciunt commodi hic molestiae nobis vitae nemo soluta laborum, est porro cum culpa fugit ullam, id.</p>
+		<p>Necessitatibus soluta labore, at laudantium quas error repellat dolores autem illo inventore quidem aperiam quae facere vel rerum, commodi eaque ducimus fugit, minima quia. Repellat tempore ipsa sed cum enim labore voluptatem, minus ad quod, non exercitationem! Veritatis assumenda aliquid incidunt quo blanditiis voluptatum neque ducimus vitae, voluptates iure, dolores amet numquam fugiat nam! Ab fugit omnis voluptate nostrum, reiciendis natus esse necessitatibus sit incidunt? Quia amet nulla, a vero quasi animi beatae pariatur ex laboriosam ipsam totam, nostrum quam architecto. Velit, perspiciatis, voluptas! Rerum rem ipsam ut doloremque in corporis laboriosam, doloribus nobis laborum tenetur quidem, illo blanditiis iste commodi iusto repudiandae vel autem deserunt obcaecati odit labore debitis magni omnis. A rem vero amet nisi veniam necessitatibus, earum delectus tempore neque maxime cum at voluptas, nihil reiciendis veritatis laborum. Blanditiis natus provident ipsum accusamus quas. Magnam, corrupti alias!</p>
+		<p>Dignissimos soluta suscipit nostrum sint optio. Sed voluptas animi nostrum neque, ad consequuntur quidem vel rerum accusantium, nihil distinctio in cupiditate, beatae, similique quos. Eveniet odit error praesentium, vero suscipit numquam sunt excepturi perspiciatis ratione illo? Nesciunt, architecto iste optio minus, consequuntur amet officiis modi quis molestiae aspernatur aliquid! Dolorum assumenda placeat quod distinctio laborum dolore, nihil fugit similique totam esse deleniti voluptates id nam, odit. Veritatis ea tempore mollitia at minima enim, facere itaque fuga excepturi accusantium perspiciatis quasi modi quae nisi. Cumque quaerat perspiciatis provident, molestiae, natus optio sit asperiores expedita architecto possimus doloremque. Sequi eius aperiam, quibusdam temporibus, tempore rem, dicta ratione, quaerat ad nam pariatur! Harum minima autem ipsa numquam, officiis qui aliquam commodi rem voluptatibus eaque eius repellendus aut accusamus quaerat laborum quis, necessitatibus quibusdam dicta atque optio. Nulla ratione dolor, et nobis deleniti, soluta.</p>
+		<p>Necessitatibus quae, tempora facere quidem asperiores iste quisquam sunt, quia, error iusto itaque unde neque quod! Debitis sed ab necessitatibus temporibus, ducimus voluptas ipsa eos vero, libero eius laboriosam id dolor laudantium natus. Quisquam harum eaque tempore dolor, sint reprehenderit ducimus, veniam pariatur magni atque voluptatem et voluptate dignissimos expedita sapiente dicta. Nostrum dolor reiciendis itaque consectetur ipsa deserunt facilis voluptate cupiditate, modi. Hic ea, sequi nostrum quibusdam nobis dolorem at? Recusandae veritatis atque saepe a, autem impedit inventore explicabo quisquam, enim consequuntur necessitatibus reprehenderit sed dolores. Temporibus maiores, minus iure error soluta et, vero! Asperiores recusandae voluptates eos eaque officiis repudiandae vel. Mollitia minima quis, eius magni, fugit vitae excepturi architecto doloremque praesentium! Unde quo, ex architecto laborum tempora facilis fugit quibusdam libero et ad doloribus eos nobis, consequatur assumenda illum ullam deleniti aliquam? Eveniet maiores dolor, error fugit!</p>
+	</div>
+
+	<div class="modal-popup">
+			<h2>Личный кабинет</h2>
+			<p>ВВедите пожалуйста свой логин и пароль</p>
+			<form class="login-form" action="/" method="post">
+				<input class="icon-user" type="text" name="login" placeholder="Логин"><br>
+				<input class="icon-password" type="text" name="password" placeholder="Пароль"><br>
+
+				<label class="login-checkbox">
+					<input class="box" type="checkbox" name="remember" checked>
+					<span>Запомните меня</span>
+				</label>
+
+				<a class="restore" href="#">Я забыл пароль!</a>
+				
+				<button type="submit">Войти</button>
+			</form>
+			<button type="button" class="close"></button>
+		</div>
+	<div class="modal-overlay"></div>
+
+	<script>
+		function ModalPopup(options) {
+			this.classModal = options.modal || '.modal-popup';
+			this.classOverlay = options.Overlay || '.modal-overlay';
+			this.popup = document.querySelector(this.classModal);
+			this.overlay = document.querySelector(this.classOverlay);
+			this.btnClose = document.querySelector('.close');
+			var that = this;
+
+			this.open = function(headerPopup) {
+				headerPopup = headerPopup || '';
+
+				that.overlay.style.display = 'block';
+				that.popup.style.display = 'block';
+
+				if(headerPopup) {
+					that.popup.querySelector('h2').innerHTML = headerPopup;
+				}
+			};
+
+			this.close = function() {
+				that.overlay.style.display = 'none';
+				that.popup.style.display = 'none';
+			};
+
+			// overlay и кнопка не отъемлемые части нашего модуля. все остальное нужно размещать вне данного класса
+			this.overlay.addEventListener('click', function() {
+				that.close();
+			});
+
+			this.btnClose.addEventListener('click', function() {
+				that.close();
+			});
+		}
+
+		window.onload = function() {
+			var popup1 = new ModalPopup({modal: '.modal-popup', overlay: '.modal-overlay'});
+
+			setTimeout(function() {
+				popup1.open('');
+			}, 2000);
+		};
+	</script>
+</body>
+</html>
