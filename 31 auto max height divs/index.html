@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		p{
+			display: block;
+			width: 200px;
+			float: left;
+			outline: 1px solid black;
+			background: lime;
+		}
+	</style>
+</head>
+<body>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio quidem natus qui. Sint similique commodi ad consectetur, tenetur laboriosam ipsa mollitia ducimus assumenda, reprehenderit sed. Dolorum molestias error perferendis alias excepturi eos cum, modi, tenetur vitae iste, ratione ea laudantium! Fuga magni accusamus minus quo distinctio, beatae odit blanditiis, eveniet accusantium sed omnis dolores temporibus ea adipisci perspiciatis repellat, itaque harum error et dignissimos. Harum labore, temporibus maiores  iure numquam odio?</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum iure provident quas inventore dicta, ipsam. Asperiores, cupiditate excepturi soluta provident doloribus labore! Nulla dolores repudiandae sit voluptatibus dolorem eveniet perferendis aliquid sed. Illum dolorum numquam, voluptatum maiores dolorem natus saepe nam dolorum suscipit. Ipsum dolores, autem sequi enim error quibusdam doloremque assumenda at quidem similique, esse asperiores doloribus necessitatibus aspernatur, delectus officiis a! Neque fugiat suscipit numquam, vero quod, deleniti voluptas fugit.</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam vero quis earum, facere, excepturi voluptas! Laborum accusamus pariatur, magnam architecto earum deserunt est eveniet ea vero vitae nobis  esse blanditiis? Maiores nisi ipsa impedit non amet nemo quam voluptate, odio possimus nulla ratione earum debitis, doloribus est? Ab unde, aspernatur nam accusantium sequi quasi? Aspernatur, accusamus quia aliquid quod. Blanditiis ullam facere consequuntur veniam tempora totam modi cumque voluptates odio iure, animi, quos quisquam doloribus molestiae cum mollitia culpa. Quaerat aliquid assumenda, voluptas rem dolor quod reprehenderit consequuntur, iste, veritatis obcaecati aliquam!</p>
+
+	<script
+  		src="https://code.jquery.com/jquery-3.2.1.min.js"
+  		integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  		crossorigin="anonymous"></script>
+
+	<script>
+		$(function(){
+			// сбор всех элементов для поиска у них максимальной высоты
+			var divs = document.querySelectorAll('p'); 
+
+			$(window).resize(function(){
+				// поиск максимальной высоты из списка элементов
+				var maxHeight = $(divs[0]).height();
+
+				for(var i = 0; i < divs.length-1; i++){
+					var currentHeight = $(divs[i+1]).height();
+
+					if(maxHeight < currentHeight) {
+						maxHeight = currentHeight;
+					}
+				}
+
+				// присвоение всем элементам найденной максимальной высоты
+				for(var i = 0; i < divs.length; i++){
+					$(divs[i]).height(maxHeight);
+				}
+			});
+		});
+	</script>
+</body>
+</html>

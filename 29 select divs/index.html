@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<style>
+		.line{
+			outline: 2px solid black;
+		}
+
+		.one, .two, .three{
+			float: left;
+			width: 200px;
+			height: 200px;
+			margin: 10px;
+
+			background: gold;
+		}
+
+		.result{
+			clear: both;
+		}
+	</style>
+</head>
+
+<body class="clearfix">
+	<div class="one">1</div>
+	<div class="two">2</div>
+	<div class="three">3</div>
+	<div class="result">0</div>
+	
+	<script
+  		src="https://code.jquery.com/jquery-3.2.1.min.js"
+  		integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  		crossorigin="anonymous"></script>
+
+ 	<script>
+  		var elems = $('div:not(.result)');
+  		var result = $('.result');
+
+  		elems.on('click', function(e) {
+  			result.html($(this).html());
+
+  			$(this).toggleClass('line');
+  		});
+ 	</script>
+</body>
+</html>

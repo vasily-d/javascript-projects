@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>live</title>
+
+	<style>
+		.active{
+			outline: 4px solid lime;
+		}
+
+		input{margin: 10px;}
+	</style>
+</head>
+
+<body>
+	<form action="/" method="get">
+		<label>name:</label>
+		<input type="text" name="text"><br>
+		<label>email:</label>
+		<input type="email" name="email"><br>
+		<button type="button">Send</button>
+	</form>
+
+	<script
+  		src="https://code.jquery.com/jquery-3.2.1.min.js"
+  		integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  		crossorigin="anonymous">
+  	</script>
+
+	<script>
+		// старый вариант без Live
+		// $('input').on('focus', function(){
+		// 	$(this).addClass('active');
+		// });
+
+		// $('input').on('blur', function(){
+		// 	$(this).removeClass('active');
+		// });
+
+		// решение проблемы с не присвоением события динамически создаваемым элементам через live и всплытие событий и через 3 параметра в On и родителя который сформировался не динамический, а в доме и отзеркаливает событие к нему на своих детей через 3 параметр в On
+		$('form').on('focus', 'input', function(e){
+			e.stopPropagation();	// всплытие событий не останавливает 3 параметр. сами может отменить!
+			$(this).addClass('active');
+		});
+
+		$('input').on('blur', 'input', function(e){
+			e.stopPropagation();
+			$(this).removeClass('active');
+		});	
+
+		// созданные элементы на получают событие сверху! так как на момент формирования дома их не было!
+		$('button[type="button"]').on('click', function(){
+			var $div = $('<div/>');
+			$('<input>').attr('type', 'text').appendTo($div);
+			$('form').append($div);
+		});
+
+		// всплытие события
+		$('body').on('click', function(e){
+			
+			console.log(e.target);
+			// e.target по сути этоначало от куда произошло событие при всплытии до текущего элемента который его перехватил!
+		});
+
+		
+
+
+	</script>
+</body>
+</html>
