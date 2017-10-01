@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8"/>
+	<title>Document</title>
+</head>
+<body>
+	
+
+	<script src="bower_components/moment/min/moment.min.js"></script>
+	<script src="bower_components/moment/locale/ru.js"></script>
+	<script>
+		console.log(moment().format());
+		console.log(moment().format('dddd YYYY'));
+		console.log(moment().format('YYYYMMDD'));
+
+		console.log(moment('20170910','YYYYMMDD').fromNow());
+		console.log(moment().startOf('second').fromNow());
+
+		console.log(moment().add(2, 'days').calendar());
+		console.log(moment().subtract(10, 'days').calendar());
+		console.log(moment().calendar());
+		console.log(moment().locale());
+	</script>
+</body>
+</html>
