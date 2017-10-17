@@ -1,0 +1,7 @@
+{
+  "name": "unslider-modife",
+  "dependencies": {
+    "unslider": "^2.0.3",
+    "jquery": "^3.2.1"
+  }
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>unslider</title>
+
+	<link rel="stylesheet" href="bower_components/unslider/dist/css/unslider.css">
+	<style src="bower_components/unslider/dist/css/unslider-dots.css"></style>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<div class="slider">
+		<ul>
+			<li><img src="1.jpg" alt="slide1"></li>
+			<li><img src="2.jpg" alt="slide2"></li>
+			<li><img src="3.jpg" alt="slide3"></li>
+		</ul>
+	</div>
+
+	<script src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="bower_components/unslider/dist/js/unslider-min.js"></script>
+	<script>
+		$(function() {
+			$('.slider').unslider({
+				autoplay: true,
+				speed: 2000,
+				delay: 2000,
+				arrow: true,
+				// arrows: {
+				// 	//  Unslider default behaviour
+				// 	prev: '<a class="unslider-arrow prev">Previous slide</a>',
+				// 	next: '<a class="unslider-arrow next">Next slide</a>',
+
+				// 	//  Example: generate buttons to start/stop the slider autoplaying
+				// 	stop: '<a class="unslider-pause" />',
+				// 	start: '<a class="unslider-play">Play</a>'
+				// },
+				animation: 'vertical'
+				// noloop: true
+			});
+		});
+	</script>
+</body>
+</html>
