@@ -1,0 +1,89 @@
+body{
+	margin: 0;
+	padding: 0;
+}
+
+img{
+	max-width: 100%;
+	height: auto;
+}
+
+.unslider{
+	position: relative;
+
+	/*для корректного позиционирования*/
+	width: 1032px;
+	margin-left: auto;
+	margin-right: auto;
+	
+	.slider{
+		border: 4px solid grey;
+
+		width: 1024px;
+		height: 600px;
+		margin-left: auto;
+		margin-right: auto;
+
+		ul li{
+			font-size: 0;
+			overflow: hidden;
+		}
+	}
+	
+	/*декорация кнопок prev и next*/
+	.unslider-arrow.prev{
+		width: 80px;
+		height: 80px;
+
+		background: #888;
+		border-radius: 50%;
+
+		text-indent: -999em;
+
+		position: absolute;
+		top: 50%;
+		left: 0;
+		
+		&:hover{
+			background: #555;
+		}
+	}
+	
+	.unslider-arrow.next{
+		width: 80px;
+		height: 80px;
+
+		background: #888;
+		border-radius: 50%;
+
+		font-size: 0;
+
+		position: absolute;
+		top: 50%;
+		right: 0;
+
+		&:hover{
+			background: #555;
+		}
+	}
+
+	/*декорация меню слайдера*/
+	.unslider-nav{
+		background: grey;
+		text-align: center;
+
+		ol{
+			margin: 0;
+			padding: 4px;
+
+			li{
+				display: inline-block;
+				margin-left: 50px;
+				padding: 5px;
+				border: 1px solid black;
+				border-radius: 50%;
+				cursor: pointer;
+			}	
+		}
+	}
+}
