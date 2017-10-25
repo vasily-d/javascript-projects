@@ -1,0 +1,6 @@
+{
+  "name": "fotorama",
+  "dependencies": {
+    "fotorama": "^4.6.4"
+  }
+}
