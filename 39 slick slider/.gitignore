@@ -1,0 +1,12 @@
+.DS_Store
+.idea
+*.ai
+*.log
+*.pdf
+*.psd
+*.pdf
+*.sublime*
+Thumbs.db
+bower_components/
+bower/
+node_modules/

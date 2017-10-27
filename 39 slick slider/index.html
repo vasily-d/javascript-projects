@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>slick slider</title>
+	<link rel="stylesheet" href="bower_components/slick-carousel/slick/slick.css">
+	<link rel="stylesheet" href="bower_components/slick-carousel/slick/slick-theme.css">
+
+	<style>
+		img{
+			width: 100%;
+			height: auto;
+		}
+
+		.slider{
+			/*border: 3px solid lime;*/
+			width: 1024px;
+			margin: 0 auto;
+			margin-top: 100px;
+		}
+
+		/*arrows*/
+		.slick-prev.slick-arrow{
+			background: grey;
+			width: 50px;
+			height: 50px;
+			z-index: 1;
+			border-radius: 50%;
+			opacity: .6;
+		}
+
+		.slick-next.slick-arrow{
+			background: grey;
+			width: 50px;
+			height: 50px;
+			z-index: 1;
+			border-radius: 50%;
+			opacity: .6;
+		}
+
+		/*nav and active*/
+		.slick-dots{
+			background: yellow;
+			border-radius: 5px;
+		}
+		
+		.slick-dots li button{
+			width: 20px;
+			height: 20px;
+			background: grey;
+			border-radius: 50%;
+		}
+
+		.slick-dots li.slick-active button{
+			background: lime;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="slider">
+	  <div><img src="1.jpg" alt=""></div>
+	  <div><img src="2.jpg" alt=""></div>
+	  <div><img src="3.jpg" alt=""></div>
+	  <div><img src="4.jpg" alt=""></div>
+	</div>
+
+	<script src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="bower_components/slick-carousel/slick/slick.min.js"></script>
+	<script>
+		$('.slider').slick({
+			arrows: true,
+			dots: true,
+			infinite: true,
+  		slidesToShow: 2,
+  		slidesToScroll: 2,
+  		autoplay: true,
+		  speed: 800
+		});
+	</script>
+</body>
+</html>
