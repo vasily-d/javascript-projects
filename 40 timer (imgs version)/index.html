@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Timer</title>
+
+	<style>
+		body{
+			margin: 0;
+			padding: 0;
+		}
+
+		.timer{
+			/*border: 2px solid #000;*/
+			display: inline-block;
+			margin-top: 100px;
+			margin-left: 50%;
+
+			transform: translate(-50%);
+		}
+		
+		/*header timer*/
+		.header-timer{
+			background: grey;
+			padding: 20px;
+
+			border-radius: 20px 20px 0 0;
+			
+			text-align: center;
+		}
+
+		.header-timer span{
+			color: #eee;
+			font-size: 20px;
+			font-family: 'Arial', sans-serif;
+			text-transform: uppercase;
+		}
+		
+		/*footer timer*/
+		.footer-timer{
+			background: #5ff;
+			padding: 20px;
+			border-radius: 0 0 20px 20px;
+		}
+
+		/*main js block*/
+		.footer-timer .js-timer{
+			overflow: hidden;
+		}
+
+		/*.footer-timer .cntDigit:first-child{
+			visibility: hidden;
+			display: none;
+		}*/
+
+		.footer-timer #cnt_0{
+			/*display: none;*/			
+		}
+
+		.footer-timer .cntDigit{
+			margin-left: 10px;
+		}
+
+		.footer-timer .cntDigit:first-child{
+			margin-left: 0;
+		}
+
+		.footer-timer .timer-label{
+			background: pink;
+		}
+
+		.footer-timer .timer-label ul{
+			margin: 0;
+			margin-top: 20px;
+			padding: 0;
+			
+			overflow: hidden;			
+			list-style: none;
+		}
+
+		.footer-timer .timer-label li{
+			float: left;
+
+			color: grey;
+
+			margin-left: 80px;
+		}
+		
+		.footer-timer .timer-label li:first-child{
+			margin-left: 30px;
+		}
+
+		/*min*/
+		.footer-timer .timer-label li:nth-child(3){
+			margin-left: 70px;
+		}
+
+		/*sec*/
+		.footer-timer .timer-label li:nth-child(4){
+			margin-left: 50px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="timer">
+		<div class="header-timer">
+			<span>До конца акции осталось</span>
+		</div>
+		<div class="footer-timer">
+			<div class="js-timer"></div>
+			<div class="timer-label">
+				<ul>
+					<li>Дни</li>
+					<li>Часы</li>
+					<li>Минуты</li>
+					<li>Секунды</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="jquery.countdown.js"></script>
+	<script>
+		$(function() {
+			$('.js-timer').countdown({
+				startTime: '03:23:17:25'
+			});
+		});
+	</script>
+</body>
+</html>
