@@ -1,0 +1,83 @@
+body {
+  background: #fff;
+  margin: 0;
+  padding: 0;
+}
+.timer2 {
+  width: 600px;
+  margin: 0 auto;
+  margin-top: 50px;
+  background: #555;
+  border-radius: 20px 20px 10px 10px;
+}
+.timer2 .header-timer {
+  margin-bottom: 20px;
+  padding: 50px;
+  background: #aaa;
+  border-radius: 20px 20px 0 0;
+  border-bottom: 10px solid #ddd;
+  text-align: center;
+}
+.timer2 .header-timer span {
+  padding: 20px;
+  background: #0f0 url('../img/tile_bg.jpg');
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #000;
+  color: #555;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+.timer2 #countdown {
+  background: #777;
+  padding-top: 20px;
+  width: 500px;
+}
+.timer2 #countdown .countDiv {
+  visibility: hidden;
+}
+.timer2 #countdown .countDays {
+  border: 2px solid black;
+  background: #eee url('../img/page_bg_center.jpg');
+  padding-top: 40px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px lime;
+}
+.timer2 #countdown .countDays .position:first-child.position .digit {
+  background: none;
+  box-shadow: none;
+}
+.timer2 #countdown .countDays .position:last-child.position .digit {
+  background: none;
+}
+.timer2 .footer-timer {
+  background-color: grey;
+  padding: 10px;
+  border-radius: 0 0 10px 10px;
+  margin-top: 20px;
+}
+.timer2 .footer-timer ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.timer2 .footer-timer ul li {
+  display: inline-block;
+  margin-left: 75px;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+.timer2 .footer-timer ul li:nth-child(2) {
+  margin-left: 90px;
+}
+.timer2 .footer-timer ul li:last-child {
+  margin-left: 55px;
+}

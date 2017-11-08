@@ -1,0 +1,13 @@
+app/.DS_Store
+app/.idea
+app/*.ai
+app/*.log
+app/*.pdf
+app/*.psd
+app/*.pdf
+app/*.sublime*
+app/Thumbs.db
+dist/
+app/libs/bower_components/
+app/libs/bower/
+node_modules/
